@@ -33,7 +33,7 @@ TreeNode *InstallTreeNode(int key, TreeNode *tnode, int vrb)
 
     if (tnode == NULL) {  // 'key' is not in the tree,
         if (vrb) printf("new Key : allocating mem and placing key(%d)\n", key);
-        tnode = treealloc(); // allocate memory for the new tree node (new key)
+        tnode = (TreeNode *) malloc(sizeof (TreeNode)); // allocate memory for the new tree node (new key)
         tnode->key = key; // install the key
         tnode->count = 1; // initialize the count to 1
         tnode->left = tnode->right = NULL; // new key is a leaf of the tree
@@ -50,11 +50,6 @@ TreeNode *InstallTreeNode(int key, TreeNode *tnode, int vrb)
 
     return tnode;
 
-}
-
-TreeNode *treealloc(void)
-{
-    return (TreeNode *) malloc(sizeof (TreeNode));
 }
 
 static int index = 0; // only for DecomposeTree()

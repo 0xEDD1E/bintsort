@@ -18,7 +18,6 @@ typedef struct treenode {
 void bintsort(int *, int, int);
 TreeNode *ComposeTree(int *, int, int);
 TreeNode *InstallTreeNode(int, TreeNode *, int);
-TreeNode *treealloc();
 void DecomposeTree(int *, TreeNode *);
 void _printtree_(TreeNode *);
 
